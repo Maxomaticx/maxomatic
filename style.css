@@ -91,3 +91,12 @@ ul {
     list-style-type: none;
     padding: 0;
 }
+
+
+
+/* Add this rule for styling links in the outside.html page */
+main ul li a {
+    font-size: 20px; /* Adjust the font size as needed */
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline */
+}
