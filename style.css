@@ -20,6 +20,7 @@ header {
     position: absolute;
     top: 10px; /* Adjust the top distance as needed */
     left: 10px; /* Adjust the left distance as needed */
+}
 
 nav ul {
     list-style-type: none;
