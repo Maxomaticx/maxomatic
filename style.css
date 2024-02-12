@@ -1,3 +1,5 @@
+/* style.css */
+
 body {
     margin: 0;
     padding: 0;
@@ -11,6 +13,12 @@ header {
     padding: 0.5em;
 }
 
+/* Style for the home link */
+nav a.home-link {
+    color: #fff;
+    text-decoration: none;
+}
+
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -20,7 +28,7 @@ nav ul {
 nav ul li {
     display: inline;
     margin-right: 25px;
-    font-size: 30px
+    font-size: 30px;
 }
 
 nav ul li a {
@@ -33,13 +41,9 @@ main {
     padding: 20px;
 }
 
-.cover-image img {
-    max-width: 100%;
-    height: auto;
-}
-
+/* Style for comic images */
 .comic-image {
-    max-width: 4px; /* Set the maximum width as needed */
+    max-width: 200px; /* Set the maximum width as needed */
     height: auto;
 }
 
