@@ -18,7 +18,8 @@ header {
     color: #fff;
     text-decoration: none;
     display: block; /* Ensures the link takes the full width */
-    margin-top: 10px; /* Add margin for spacing */
+    margin-top: 5px; /* Add margin for spacing */
+    margin-bottom: 5px;
 }
 
 nav ul {
