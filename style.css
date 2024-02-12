@@ -22,6 +22,11 @@ header {
     left: 10px; /* Adjust the left distance as needed */
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
 nav ul {
     list-style-type: none;
     margin: 0;
