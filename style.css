@@ -41,10 +41,18 @@ main {
     padding: 20px;
 }
 
+/* Style for comic container */
+.comic-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* Style for comic images */
 .comic-image {
     max-width: 200px; /* Set the maximum width as needed */
     height: auto;
+    margin-bottom: 20px; /* Add margin between images */
 }
 
 footer {
