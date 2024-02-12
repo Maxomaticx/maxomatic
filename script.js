@@ -1,14 +1,15 @@
 // script.js
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Get the previous page name from the URL
-    var previousPageName = extractPageName(document.referrer);
+    // Get the current page URL and previous page information
+    var currentPage = window.location.href;
+    var previousPageInfo = getPreviousPage(currentPage);
 
     // Create a link for the previous page
     var previousLink = document.createElement('a');
-    previousLink.href = document.referrer;
-    previousLink.textContent = previousPageName || 'Previous'; // Set text content to page name or use a default
-    previousLink.classList.add('previous-link');
+    previousLink.href = previousPageInfo.url;
+    previousLink.textContent = previousPageInfo.name; // Set text content to page name
+    previousLink.classList.add('previous-link'); // Add the 'previous-link' class
 
     // Insert the link above the title
     var header = document.querySelector('header');
@@ -17,10 +18,23 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// Function to extract the page name from the page URL
-function extractPageName(pageUrl) {
-    // Implement your logic to extract the name from the URL
-    // For simplicity, this example just takes the last part of the URL
-    var parts = pageUrl.split('/');
-    return parts[parts.length - 1].replace('.html', ''); // Remove '.html' if present
+// Function to get the URL and name of the previous page
+function getPreviousPage(currentPage) {
+    // Implement your logic to determine the previous page URL and name
+    // For simplicity, this example returns an object with dummy data
+    var previousPages = ['home.html', 'COMIC/TEST/test.html', 'COMIC/MISC/misc.html'];
+
+    var currentIndex = previousPages.indexOf(currentPage);
+    if (currentIndex > 0) {
+        var previousPage = previousPages[currentIndex - 1];
+        return {
+            url: previousPage,
+            name: previousPage.split('/').pop().split('.')[0] // Extract page name from the URL
+        };
+    } else {
+        return {
+            url: 'home.html',
+            name: 'Home'
+        };
+    }
 }
