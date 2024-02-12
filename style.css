@@ -14,9 +14,11 @@ header {
 }
 
 /* Style for the home link */
-nav a.home-link {
+.home-link {
     color: #fff;
     text-decoration: none;
+    display: block; /* Ensures the link takes the full width */
+    margin-top: 10px; /* Add margin for spacing */
 }
 
 nav ul {
@@ -50,7 +52,7 @@ main {
 
 /* Style for comic images */
 .comic-image {
-    max-width: 200px; /* Set the maximum width as needed */
+    max-width: 400px; /* Set the maximum width as needed */
     height: auto;
     margin-bottom: 20px; /* Add margin between images */
 }
