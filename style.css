@@ -58,6 +58,19 @@ main {
     margin-bottom: 20px; /* Add margin between images */
 }
 
+.comic-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.comic-link {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
 footer {
     background-color: #333;
     color: #fff;
