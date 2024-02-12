@@ -17,15 +17,20 @@ header {
 .home-link {
     color: #fff;
     text-decoration: none;
-    display: block; /* Ensures the link takes the full width */
-    margin-top: 5px; /* Add margin for spacing */
-    margin-bottom: 5px;
-}
+    position: absolute;
+    top: 10px; /* Adjust the top distance as needed */
+    left: 10px; /* Adjust the left distance as needed */
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #fff; /* Adjust the color as needed */
+    margin-bottom: 5px; /* Adjust the margin as needed */
 }
 
 nav ul li {
