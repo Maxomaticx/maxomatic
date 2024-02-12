@@ -96,7 +96,7 @@ ul {
 
 /* Add this rule for styling links in the outside.html page */
 main ul li a {
-    font-size: 100px; /* Adjust the font size as needed */
+    font-size: 70px; /* Adjust the font size as needed */
     color: #fff; /* White text color */
     text-decoration: none; /* Remove underline */
 }
