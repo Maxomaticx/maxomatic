@@ -1,13 +1,14 @@
 // script.js
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Get the current page URL
+    // Get the current page URL and previous page information
     var currentPage = window.location.href;
+    var previousPageInfo = getPreviousPage(currentPage);
 
     // Create a link for the previous page
     var previousLink = document.createElement('a');
-    previousLink.href = getPreviousPage(currentPage);
-    previousLink.textContent = 'previous';
+    previousLink.href = previousPageInfo.url;
+    previousLink.textContent = previousPageInfo.name; // Set text content to page name
     previousLink.classList.add('previous-link'); // Add the 'previous-link' class
 
     // Insert the link above the title
@@ -17,9 +18,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// Function to get the URL of the previous page
+// Function to get the URL and name of the previous page
 function getPreviousPage(currentPage) {
-    // Implement your logic to determine the previous page URL
-    // For simplicity, this example just appends 'previous.html' to the current URL
-    return currentPage.replace(/[^/]*$/, 'previous.html');
+    // Implement your logic to determine the previous page URL and name
+    // For simplicity, this example returns an object with dummy data
+    return {
+        url: currentPage.replace(/[^/]*$/, 'previous.html'),
+        name: 'Previous Page'
+    };
 }
