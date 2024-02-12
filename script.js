@@ -1,15 +1,12 @@
 // script.js
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Get the previous page URL
-    var previousPageUrl = document.referrer;
-
-    // Extract the name from the URL (you may need to adjust this logic)
-    var previousPageName = extractPageName(previousPageUrl);
+    // Get the previous page name from the URL
+    var previousPageName = extractPageName(document.referrer);
 
     // Create a link for the previous page
     var previousLink = document.createElement('a');
-    previousLink.href = previousPageUrl;
+    previousLink.href = document.referrer;
     previousLink.textContent = previousPageName || 'Previous'; // Set text content to page name or use a default
     previousLink.classList.add('previous-link');
 
@@ -20,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// Function to extract the name from the page URL (adjust this logic as needed)
+// Function to extract the page name from the page URL
 function extractPageName(pageUrl) {
     // Implement your logic to extract the name from the URL
     // For simplicity, this example just takes the last part of the URL
