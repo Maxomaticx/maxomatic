@@ -22,21 +22,12 @@ header {
     left: 10px; /* Adjust the left distance as needed */
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
+
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-}
-
-.subtitle {
-    font-size: 18px;
-    color: #fff; /* Adjust the color as needed */
-    margin-bottom: 5px; /* Adjust the margin as needed */
 }
 
 nav ul li {
@@ -94,4 +85,9 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1em;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
 }
