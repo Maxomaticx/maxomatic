@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var previousLink = document.createElement('a');
     previousLink.href = getPreviousPage(currentPage);
     previousLink.textContent = 'previous';
-    previousLink.classList.add('previous-link');
+    previousLink.classList.add('previous-link'); // Add the 'previous-link' class
 
     // Insert the link above the title
     var header = document.querySelector('header');
