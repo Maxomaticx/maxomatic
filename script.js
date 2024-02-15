@@ -34,7 +34,7 @@ function getPreviousPage(currentPage) {
     } else {
         return {
             url: 'home.html',
-            name: 'Home'
+            name: 'home'
         };
     }
 }
