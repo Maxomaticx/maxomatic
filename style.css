@@ -60,7 +60,8 @@ main {
 }
 
 .spread {
-    max-width: none; /* Allow double-page spreads to exceed the normal width */
+    width: 100%; /* Force spread images to take up the full width */
+    margin: 0; /* Remove any margin for spread images */
 }
 
 .comic-links {
