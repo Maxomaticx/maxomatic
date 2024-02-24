@@ -49,19 +49,18 @@ main {
 
 /* Style for comic images */
 .comic-image {
-    width: 50%; /* Make the image fill the container */
+    width: 800px; /* Make the image fill the container */
     height: auto;
     margin-bottom: 20px; /* Add margin between images */
 }
 
 .comic-container {
-    max-width: 1600; /* Remove any maximum width constraint */
+    max-width: 1200px; /* Remove any maximum width constraint */
     margin: 0; /* Remove margin for the container */
 }
 
 .spread {
-    width: 100%
-    max-width: 1600px; /* Force spread images to take up the full width */
+    width: 1200px
     margin: 0; /* Remove any margin for spread images */
 }
 
