@@ -55,7 +55,7 @@ main {
 }
 
 .comic-container {
-    max-width: 1200px; /* Remove any maximum width constraint */
+    max-width: 1600px; /* Remove any maximum width constraint */
     margin: 0 auto; /* Center the container horizontally */
     display: flex;
     flex-direction: column;
@@ -64,7 +64,7 @@ main {
 }
 
 .spread {
-    max-width: 1600px;
+    max-width: 100%;
 }
 
 .comic-links {
