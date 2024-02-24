@@ -20,21 +20,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Function to get the URL and name of the previous page
 function getPreviousPage(currentPage) {
-    // Implement your logic to determine the previous page URL and name
-    // For simplicity, this example returns an object with dummy data
-    var previousPages = ['home.html', 'COMIC/TEST/test.html', 'COMIC/MISC/misc.html'];
+    var pathSegments = currentPage.split('/').filter(Boolean); // Split URL and remove empty segments
+    var currentPageName = pathSegments[pathSegments.length - 1].split('.')[0]; // Extract page name from the last segment
 
-    var currentIndex = previousPages.indexOf(currentPage);
-    if (currentIndex > 0) {
-        var previousPage = previousPages[currentIndex - 1];
+    if (pathSegments.length >= 2) {
+        // Get the name of the previous page from the second-to-last segment
+        var previousPageName = pathSegments[pathSegments.length - 2];
         return {
-            url: previousPage,
-            name: previousPage.split('/').pop().split('.')[0] // Extract page name from the URL
+            url: '../' + previousPageName + '/home.html', // Adjust the path as needed
+            name: previousPageName.charAt(0).toUpperCase() + previousPageName.slice(1) // Capitalize the first letter
         };
     } else {
+        // Default to home if there's no previous page
         return {
             url: 'home.html',
-            name: 'home'
+            name: 'Home'
         };
     }
 }
