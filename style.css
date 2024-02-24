@@ -49,7 +49,7 @@ main {
 
 /* Style for comic images */
 .comic-image {
-    width: 800px; /* Make the image fill the container */
+    width: 50%; /* Make the image fill the container */
     height: auto;
     margin-bottom: 20px; /* Add margin between images */
 }
