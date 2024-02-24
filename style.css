@@ -46,18 +46,14 @@ main {
 
 /* Style for comic container */
 .comic-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 800px; /* Set the maximum width for desktop screens */
+    max-width: 100%; /* Set the maximum width to 100% of the viewport */
     margin: 0 auto; /* Center the container */
 }
 
 /* Style for comic images */
 .comic-image {
-    max-width: 100%;
+    width: 100%; /* Make the image fill the container */
     height: auto;
-    margin: 0 10px;
     margin-bottom: 20px; /* Add margin between images */
 }
 
@@ -98,11 +94,4 @@ main ul li a {
     font-size: 50px; /* Adjust the font size as needed */
     color: #fff; /* White text color */
     text-decoration: none; /* Remove underline */
-}
-
-/* Media query for adjusting the comic container width on smaller screens */
-@media (max-width: 800px) {
-    .comic-container {
-        max-width: 100%; /* Set the maximum width for smaller screens */
-    }
 }
