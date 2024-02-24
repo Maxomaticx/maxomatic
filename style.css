@@ -46,7 +46,7 @@ main {
 
 /* Style for comic container */
 .comic-container {
-    max-width: 600px; /* Set the maximum width as needed */
+    max-width: 800px; /* Set the maximum width as needed */
     margin: 0 auto; /* Center the container */
 }
 
