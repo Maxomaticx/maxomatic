@@ -57,6 +57,7 @@ main {
 .comic-image {
     max-width: 100%;
     height: auto;
+    margin: 0 10px;
     margin-bottom: 20px; /* Add margin between images */
 }
 
