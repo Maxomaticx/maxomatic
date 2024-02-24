@@ -55,8 +55,8 @@ main {
 }
 
 .comic-container {
-    max-width: 800px; /* Set the maximum width as needed */
-    margin: 0 auto; /* Center the container */
+    max-width: none; /* Remove any maximum width constraint */
+    margin: 0; /* Remove margin for the container */
 }
 
 .spread {
