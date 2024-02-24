@@ -55,12 +55,12 @@ main {
 }
 
 .comic-container {
-    max-width: 800px; /* Remove any maximum width constraint */
+    max-width: 1200px; /* Remove any maximum width constraint */
     margin: 0; /* Remove margin for the container */
 }
 
 .spread {
-    max-width: 800px;
+    max-width: 1200px;
 }
 
 .comic-links {
