@@ -52,19 +52,19 @@ main {
     width: 800px; /* Make the image fill the container */
     height: auto;
     margin-bottom: 20px; /* Add margin between images */
-    align-content: center;
+    text-align: center;
 
 }
 
 .comic-container {
     max-width: 1200px; /* Remove any maximum width constraint */
-    margin: 10; /* Remove margin for the container */
-    align-content: center;
+    margin: 0; /* Remove margin for the container */
+    text-align: center;
 }
 
 .spread {
     max-width: 1600px;
-    align-content: center;
+    text-align: center;
 }
 
 .comic-links {
