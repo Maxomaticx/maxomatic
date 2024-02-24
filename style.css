@@ -55,10 +55,12 @@ main {
 
 /* Style for comic images */
 .comic-image {
-    max-width: 600px; /* Set the maximum width as needed */
+    max-width: 100%;
     height: auto;
     margin-bottom: 20px; /* Add margin between images */
 }
+
+
 
 .comic-links {
     text-align: center;
