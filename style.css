@@ -45,10 +45,7 @@ main {
 }
 
 /* Style for comic container */
-.comic-container {
-    max-width: 800px; /* Set the maximum width as needed */
-    margin: 0 auto; /* Center the container */
-}
+
 
 /* Style for comic images */
 .comic-image {
@@ -56,7 +53,11 @@ main {
     height: auto;
     margin-bottom: 20px; /* Add margin between images */
 }
-
+            
+.comic-container {
+    max-width: 800px; /* Set the maximum width as needed */
+    margin: 0 auto; /* Center the container */
+}
 .comic-links {
     text-align: center;
     margin-top: 20px;
