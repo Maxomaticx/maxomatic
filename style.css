@@ -60,7 +60,7 @@ main {
 }
 
 .spread {
-    width: 100%; /* Force spread images to take up the full width */
+    max-width: 1600px; /* Force spread images to take up the full width */
     margin: 0; /* Remove any margin for spread images */
 }
 
