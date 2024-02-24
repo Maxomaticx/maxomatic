@@ -26,8 +26,9 @@ function getPreviousPage(currentPage) {
     if (pathSegments.length >= 2) {
         // Get the name of the previous page from the second-to-last segment
         var previousPageName = pathSegments[pathSegments.length - 2];
+        var parentDirectory = pathSegments.slice(0, -1).join('/') + '/'; // Join all but the last segment to get the parent directory
         return {
-            url: '../' + previousPageName + '/home.html', // Adjust the path as needed
+            url: parentDirectory + previousPageName + '/home.html', // Adjust the path as needed
             name: previousPageName.charAt(0).toUpperCase() + previousPageName.slice(1) // Capitalize the first letter
         };
     } else {
