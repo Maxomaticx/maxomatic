@@ -1,0 +1,21 @@
+how to make a website notes
+
+
+
+
+
+
+
+
+
+
+how to link to other files (this will make your website have more than one page)
+<a href= "fileName.html">cool page click here</a>
+
+
+
+linking to an html lets you use html features (such as linking). most of your files will probably want to be html then.
+
+linking to a text file will show all the text. so html will not work. also the font and text looked different than when it was an html file (only when opened on browser).
+
+linking a rich text file will make the user download the file whhen clicked on. i dont think you want to do this.
