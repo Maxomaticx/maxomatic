@@ -1,28 +1,76 @@
-<html style="
-font-size: 23px;
-color: #ffffff;
-text-decoration: none;
-text-align: center;
-background-color: #000000;
-font-family: courier;
-">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Blackjack</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack Game</title>
+    <style>
+        /* Add your styles here */
+    </style>
 </head>
-
 <body>
+    <h1>Blackjack Game</h1>
+    <button id="playButton">Play</button>
+    <div id="handsDisplay"></div>
+    <button id="hitButton" style="display:none;">Hit</button>
+    <button id="standButton" style="display:none;">Stand</button>
+    <div id="resultDisplay"></div>
 
-    <h1>Play Blackjack</h1>
+    <script>
+        let userHand = [];
+        let dealerHand = [];
+        let userMoves = [];
+        let isUserDone = false;
 
-    <!-- Dealer's Hand (You) -->
-    <span>My Hand:</span><br>
-    <span id="dealerCards"></span><br>
-    <span id="dealerTotal"></span><br><br>
+        function getCard() {
+            return Math.floor(Math.random() * 11) + 1; // Simulate a card from 1 to 11
+        }
 
-    <!-- Player's Hand (Other Player) -->
-    <span>Your Hand:</span><br>
-    <span id="playerCards"></span><br>
-    <span id="playerTotal"></span><br><br>
+        document.getElementById('playButton').addEventListener('click', function() {
+            userHand = [getCard(), getCard()];
+            dealerHand = [getCard(), getCard()];
+            userMoves = []; // Reset user moves
+            updateDisplay();
+            document.getElementById('hitButton').style.display = 'inline';
+            document.getElementById('standButton').style.display = 'inline';
+        });
 
-    <!--
+        function updateDisplay() {
+            document.getElementById('handsDisplay').innerText = 
+                `Your Hand: ${userHand.join(', ')} | Dealer's Hand: ${dealerHand[0]}, ?`;
+        }
+
+        document.getElementById('hitButton').addEventListener('click', function() {
+            userHand.push(getCard());
+            userMoves.push('Hit');
+            updateDisplay();
+            // Add logic to check for bust
+        });
+
+        document.getElementById('standButton').addEventListener('click', function() {
+            userMoves.push('Stand');
+            isUserDone = true;
+            // Logic for dealer's turn and final results
+            calculateResults();
+        });
+
+        function calculateResults() {
+            // Placeholder for dealer logic, e.g., drawing cards until a certain score
+            // Show final hands and results
+            const userTotal = userHand.reduce((a, b) => a + b, 0);
+            const dealerTotal = dealerHand.reduce((a, b) => a + b, 0);
+            let result = '';
+            if (userTotal > 21) {
+                result = 'You bust! Dealer wins.';
+            } else if (dealerTotal > 21 || userTotal > dealerTotal) {
+                result = 'You win!';
+            } else if (userTotal < dealerTotal) {
+                result = 'Dealer wins.';
+            } else {
+                result = 'It\'s a draw!';
+            }
+            document.getElementById('resultDisplay').innerText = `Final Hands: Your Total: ${userTotal}, Dealer Total: ${dealerTotal}. ${result}`;
+        }
+    </script>
+</body>
+</html>
