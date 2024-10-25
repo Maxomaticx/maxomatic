@@ -5,7 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blackjack Game</title>
     <style>
-        /* Add your styles here */
+        body {
+            font-size: 23px;
+            color: #ffffff;
+            text-align: center;
+            background-color: #000000;
+            font-family: courier;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
@@ -22,41 +33,19 @@
         let userMoves = [];
         let isUserDone = false;
 
+        // Function to get a random card
         function getCard() {
             return Math.floor(Math.random() * 11) + 1; // Simulate a card from 1 to 11
         }
 
-        document.getElementById('playButton').addEventListener('click', function() {
-            userHand = [getCard(), getCard()];
-            dealerHand = [getCard(), getCard()];
-            userMoves = []; // Reset user moves
-            updateDisplay();
-            document.getElementById('hitButton').style.display = 'inline';
-            document.getElementById('standButton').style.display = 'inline';
-        });
-
+        // Function to update the display of hands and results
         function updateDisplay() {
             document.getElementById('handsDisplay').innerText = 
                 `Your Hand: ${userHand.join(', ')} | Dealer's Hand: ${dealerHand[0]}, ?`;
         }
 
-        document.getElementById('hitButton').addEventListener('click', function() {
-            userHand.push(getCard());
-            userMoves.push('Hit');
-            updateDisplay();
-            // Add logic to check for bust
-        });
-
-        document.getElementById('standButton').addEventListener('click', function() {
-            userMoves.push('Stand');
-            isUserDone = true;
-            // Logic for dealer's turn and final results
-            calculateResults();
-        });
-
+        // Function to calculate results and display them
         function calculateResults() {
-            // Placeholder for dealer logic, e.g., drawing cards until a certain score
-            // Show final hands and results
             const userTotal = userHand.reduce((a, b) => a + b, 0);
             const dealerTotal = dealerHand.reduce((a, b) => a + b, 0);
             let result = '';
@@ -69,8 +58,60 @@
             } else {
                 result = 'It\'s a draw!';
             }
-            document.getElementById('resultDisplay').innerText = `Final Hands: Your Total: ${userTotal}, Dealer Total: ${dealerTotal}. ${result}`;
+            document.getElementById('resultDisplay').innerText = 
+                `Final Hands: Your Total: ${userTotal}, Dealer Total: ${dealerTotal}. ${result}`;
+
+            // Save the game data to the JSON file (manual update required)
+            saveGameData(userHand, dealerHand, userMoves, isUserDone);
         }
+
+        // Function to save game data to the JSON file (for manual update)
+        function saveGameData(userHand, dealerHand, userMoves, isUserDone) {
+            // Construct the JSON structure
+            const gameData = {
+                userHand: userHand,
+                dealerHand: dealerHand,
+                userMoves: userMoves,
+                isUserDone: isUserDone
+            };
+            // Log the data to console for manual copying
+            console.log("Update your gameData.json file with the following data:");
+            console.log(JSON.stringify(gameData, null, 4)); // Pretty print
+        }
+
+        // Event listener for the Play button
+        document.getElementById('playButton').addEventListener('click', function() {
+            userHand = [getCard(), getCard()];
+            dealerHand = [getCard(), getCard()];
+            userMoves = []; // Reset user moves
+            isUserDone = false; // Reset user done status
+            updateDisplay();
+            document.getElementById('hitButton').style.display = 'inline';
+            document.getElementById('standButton').style.display = 'inline';
+        });
+
+        // Event listener for the Hit button
+        document.getElementById('hitButton').addEventListener('click', function() {
+            userHand.push(getCard());
+            userMoves.push('Hit');
+            updateDisplay();
+            // Check for bust
+            if (userHand.reduce((a, b) => a + b, 0) > 21) {
+                isUserDone = true;
+                calculateResults();
+            }
+        });
+
+        // Event listener for the Stand button
+        document.getElementById('standButton').addEventListener('click', function() {
+            userMoves.push('Stand');
+            isUserDone = true;
+            // Dealer logic (simple example: dealer hits until 17)
+            while (dealerHand.reduce((a, b) => a + b, 0) < 17) {
+                dealerHand.push(getCard());
+            }
+            calculateResults();
+        });
     </script>
 </body>
 </html>
